@@ -1,0 +1,6 @@
+**/*.js
+node_modules
+android/
+ios/
+.azuredevops
+__tests__
