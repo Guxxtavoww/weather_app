@@ -9,7 +9,7 @@ import {
 } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { Home } from 'screens';
+import { Home } from '../screens';
 import { RootStackParamList } from './types';
 
 function Navigation(): JSX.Element {
@@ -17,31 +17,31 @@ function Navigation(): JSX.Element {
   const navigationRef = createRef<NavigationContainerRef<RootStackParamList>>();
 
   return (
-    <NavigationContainer ref={navigationRef}>
-      <Stack.Navigator
-        screenOptions={{
-          cardStyle: {
-            backgroundColor: '#0d0d0d',
-          },
-          headerTitleAlign: 'center',
-          headerTitleStyle: {
-            color: 'white',
-            fontFamily: 'RobotoSlab-Medium',
-          },
-          headerTintColor: '#fff',
-          headerStyle: {
-            backgroundColor: '#0d0d0d',
-            elevation: 0,
-          },
-          //@ts-ignore
-          initalRouteName: 'Home',
-        }}
-      >
-        <Suspense fallback={<ActivityIndicator />}>
+    <Suspense fallback={<ActivityIndicator />}>
+      <NavigationContainer ref={navigationRef}>
+        <Stack.Navigator
+          screenOptions={{
+            cardStyle: {
+              backgroundColor: '#0d0d0d',
+            },
+            headerTitleAlign: 'center',
+            headerTitleStyle: {
+              color: 'white',
+              fontFamily: 'RobotoSlab-Medium',
+            },
+            headerTintColor: '#fff',
+            headerStyle: {
+              backgroundColor: '#0d0d0d',
+              elevation: 0,
+            },
+            // @ts-ignore
+            initalRouteName: 'Home',
+          }}
+        >
           <Stack.Screen component={Home} name="Home" />
-        </Suspense>
-      </Stack.Navigator>
-    </NavigationContainer>
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Suspense>
   );
 }
 
