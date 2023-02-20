@@ -13,8 +13,11 @@
     "changelog": "auto-changelog -p"
   },
   "dependencies": {
+    "@react-navigation/native": "^6.1.4",
+    "@react-navigation/stack": "^6.3.14",
     "react": "18.2.0",
     "react-native": "0.71.3",
+    "react-native-gesture-handler": "^2.9.0",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
