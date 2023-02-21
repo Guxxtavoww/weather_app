@@ -16,3 +16,8 @@ export type FCWithChildren<
 export type LooseAutoComplete<T extends string | number> =
   | T
   | Omit<string | number, T>;
+
+export type ExtractValueTypeOfObjectKey<
+  Obj extends object,
+  Key extends keyof Obj,
+> = Obj[Key];
